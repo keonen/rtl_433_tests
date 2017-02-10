@@ -16,7 +16,7 @@ class MyDB extends SQLite3
    }
 
    $sql =<<<EOF
-      SELECT * from temp order by id desc limit 288;
+       select * from temp where timestamp > datetime('now','-1 day') order by id desc;
 EOF;
 
    $ret = $db->query($sql);
